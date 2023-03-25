@@ -21,6 +21,23 @@ function guardar(){
     }
 }
 
+function editar(){
+    let nombre  = document.getElementById("nombre").value;
+    let edad    = document.getElementById("edad").value;
+ 
+    alumnos.forEach(p => {
+        encontrado = document.getElementById("id").value;
+            if(encontrado != p.id ){
+                console.log("no encontrado");
+            }else{
+                p.nombre = nombre
+                p.edad = edad
+            }
+        });
+
+
+}
+
 function eliminar(){
     let id = document.getElementById("id").value;
     let encontrado = alumnos.find(item => item.id == id)
@@ -33,13 +50,13 @@ function eliminar(){
 }
 
 function buscar(){
-
     if(alumnos.length == 0 ){
-        alert("arreglo esta vacio")
+        console.log("arreglo esta vacio")
     }else{
         alumnos.forEach(p => {
-            encontrado = document.getElementById("id").value;
+        encontrado = document.getElementById("id").value;
             if(encontrado != p.id ){
+                console.log("no encontrado");
             }else{
                 document.getElementById('nombre').value = p.nombre;
                 document.getElementById('edad').value = p.edad;
@@ -59,7 +76,6 @@ function limpiar(){
 }
 
 function mostrar(){
-    alumnos.forEach(p => {
-        console.log(`id: ${p.id} nombre: ${p.nombre} edad: ${p.edad}`);
+    alumnos.forEach(p => {console.log(`id: ${p.id} nombre: ${p.nombre} edad: ${p.edad}`);
     });
 }
